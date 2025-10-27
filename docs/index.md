@@ -3,9 +3,9 @@
 ---
 
 ## 🏛 **Current Adminstration Details**
-- ** President:Shreya**
-- ** Vice President of Policy: Roberto Ortiz-Gonzalez**
-- ** Vice President of Services: Clare Wiegman**
+- **President:Shreya**
+- **Vice President of Policy: Roberto Ortiz-Gonzalez**
+- **Vice President of Services: Clare Wiegman**
 - **📅 Adminstration Year:** 2025-2026 
 
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 👥 **Contact us*  
+## 👥 **Contact us**  
 
 ---
 
