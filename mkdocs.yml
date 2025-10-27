@@ -13,11 +13,14 @@ theme:
     code: "Fira Code"
   logo: logo.png
   favicon: logo.png
-extra_css:
-  - stylesheets/asu.css
+
 extra:
   generator: false   # hides "Made with Material for MkDocs"
-  
+---
+hide:
+  - toc
+---
+
   features:
     - navigation.sections  # Enables collapsible sidebar navigation
     - navigation.tabs.sticky  # Keeps tabs fixed at the top
@@ -54,6 +57,7 @@ plugins:
 
 extra_css:
   - stylesheets/extra.css  
+    - stylesheets/asu.css
 
 extra_javascript:
  - javascripts/mathjax.js
