@@ -1,0 +1,59 @@
+site_name: EGR314 Team 308
+site_url: https://embedded-systems-design.github.io/template_report
+repo_url: https://github.com/embedded-systems-design/template_report
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: custom_theme/
+  palette:
+    primary: red
+    accent: white
+  font:
+    text: "Lato"
+    code: "Fira Code"
+  logo: static/logo.svg
+  favicon: static/logo.png
+
+  features:
+    - navigation.sections  # Enables collapsible sidebar navigation
+    - navigation.tabs.sticky  # Keeps tabs fixed at the top
+    - navigation.path  # Shows breadcrumb navigation
+    - navigation.indexes  # Uses index.md as section overview
+    - navigation.prune  # Hides empty sections
+    - toc.follow  # Table of contents follows scrolling
+    - navigation.footer  # Adds navigation buttons at the bottom
+    - content.action.edit  # Allows quick edit access
+    - search.highlight  # Highlights search terms in results
+    - content.code.copy  # Adds copy button to code blocks
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+draft_docs: |
+  **/*_unpublished.md
+  **/*_draft.md
+  **/*_draft**
+
+plugins:
+  - search
+  - glightbox  # Allow image resizing and zooming
+
+extra_css:
+  - stylesheets/extra.css  
+
+extra_javascript:
+ - javascripts/mathjax.js
+ - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
