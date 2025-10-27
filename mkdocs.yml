@@ -12,7 +12,7 @@ theme:
   font:
     text: "Work Sans"
     code: "Fira Code"
-  logo: static/logo.svg
+  logo: static/logo.png
   favicon: static/logo.png
 
   features:
