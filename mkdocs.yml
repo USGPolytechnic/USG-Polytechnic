@@ -23,7 +23,7 @@ extra:
     - navigation.path  # Shows breadcrumb navigation
     - navigation.indexes  # Uses index.md as section overview
     - navigation.prune  # Hides empty sections
-    - toc.follow  # Table of contents follows scrolling
+    #- toc.follow  # Table of contents follows scrolling
     - navigation.footer  # Adds navigation buttons at the bottom
     - content.action.edit  # Allows quick edit access
     - search.highlight  # Highlights search terms in results
