@@ -1,4 +1,4 @@
 mkdocs==1.5.3
 mkdocs-material==9.5.18
 mkdocs-glightbox==0.5.2
-mkdocs-rss-plugin==1.17.4
+mkdocs-rss-plugin==1.16.0
