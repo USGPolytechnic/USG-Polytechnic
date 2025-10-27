@@ -2,19 +2,18 @@ site_name: Undergraduate Student Government Polytechnic
 site_url: https://usgpolytechnic.github.io/USG-Polytechnic/
 repo_url: https://github.com/USGPolytechnic/USG-Polytechnic
 edit_uri: edit/main/docs/
-
 theme:
   name: material
   custom_dir: custom_theme/
   palette:
-    primary: Red
-    accent: Orange
+    primary: "#8C1D40"   # ASU Maroon
+    accent: "#FFC627"   # ASU Gold
   font:
     text: "Lato"
     code: "Fira Code"
   logo: static/logo.png
- ## favicon: static/logo.png
-  
+  favicon: static/logo.png
+
 extra:
   generator: false   # hides "Made with Material for MkDocs"
   
