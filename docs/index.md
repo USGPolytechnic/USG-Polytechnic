@@ -25,9 +25,6 @@
 
 ---
 
-
----
-
 <p align="center" style="font-size: 1.2rem; font-weight: bold;">
 © Undergraduate Student Body - Polytechnic | Arizona State University
 </p>
