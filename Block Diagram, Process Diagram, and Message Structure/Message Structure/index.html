@@ -1,0 +1,1510 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+
+<meta name="robots" content="nofollow">
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://embedded-systems-design.github.io/template_report/Block%20Diagram%2C%20Process%20Diagram%2C%20and%20Message%20Structure/Message%20Structure/">
+      
+      
+        <link rel="prev" href="../Block%20Diagram/">
+      
+      
+        <link rel="next" href="../The%20Process%20Diagram/">
+      
+      
+      <link rel="icon" href="../../static/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+            
+
+        
+
+    
+      
+        <title>Message Structure - EGR314 Team 308</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#message-structure-design-decision-making-process" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EGR314 Team 308" class="md-header__button md-logo" aria-label="EGR314 Team 308" data-md-component="logo">
+      
+  <img src="../../static/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EGR314 Team 308
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Message Structure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/embedded-systems-design/template_report" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EGR314 Team 308" class="md-nav__button md-logo" aria-label="EGR314 Team 308" data-md-component="logo">
+      
+  <img src="../../static/logo.svg" alt="logo">
+
+    </a>
+    EGR314 Team 308
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/embedded-systems-design/template_report" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏆 Welcome to Team Fresh Start - Team 308
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Appendix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Team Member Communication Modes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Datasheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasheets for Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ideation%20and%20Concept%20Generation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ideation and Concept Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Poster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reflection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Block Diagram, Process Diagram, and Message Structure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Block Diagram, Process Diagram, and Message Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Block%20Diagram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Block Diagram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Message Structure
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Message Structure
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#team-member-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Team Member Roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-table-message-type-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Table (Message Type Overview)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-message-flow-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Message Flow Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siddhant-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Siddhant Messages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethan-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethan Messages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sanjit-messages-to-ethan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sanjit Messages to Ethan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kevin-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kevin Messages
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The%20Process%20Diagram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Process Diagram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../Individual%20Block%20Diagrams/%28HMI%29%20LCD%20Block%20Diagram%20%28Kevin%29/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Individual Block Diagrams
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Static
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Static
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../static/node_modules/mathjax/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Node modules
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#team-member-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Team Member Roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-table-message-type-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Table (Message Type Overview)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-message-flow-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Message Flow Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siddhant-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Siddhant Messages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethan-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethan Messages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sanjit-messages-to-ethan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sanjit Messages to Ethan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kevin-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kevin Messages
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/embedded-systems-design/template_report/edit/main/docs/Block Diagram, Process Diagram, and Message Structure/Message Structure.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+    </a>
+  
+  
+
+
+<hr>
+<h1 id="message-structure-design-decision-making-process">Message Structure: Design &amp; Decision-Making Process</h1>
+<hr>
+<p>Our team's <strong>message structure design</strong> was carefully developed to ensure <strong>clear data transmission</strong>, <strong>efficient routing</strong>, and <strong>precise subsystem interactions</strong>. We structured each message using a <strong>byte-based format</strong>, including clearly defined <strong>headers, source IDs, destination IDs, message data, and footers</strong>, ensuring that all components correctly interpret and respond to data. The decision-making process involved analyzing how each team member’s subsystem contributes to the overall communication flow. <strong>Ethan’s sensor system</strong> collects <strong>temperature and humidity readings</strong> and transmits them via <strong>UART and WiFi</strong>, ensuring accurate environmental monitoring. <strong>Sanjit’s web subsystem</strong> processes and forwards sensor readings to the <strong>MQTT server</strong>, storing and publishing updated data. <strong>Kevin’s HMI subsystem</strong> receives and displays <strong>temperature, humidity, and water flow rate</strong> information, ensuring users have real-time system feedback. <strong>Siddhant’s motor subsystem</strong> uses sensor data to <strong>adjust actuator states</strong>, controlling cooling mechanisms based on temperature levels. The sequence diagram demonstrates how each component interacts, with messages structured to maintain <strong>recurring updates</strong> (automatic temperature readings) and <strong>event-driven interactions</strong> (manual motor adjustments via Bluetooth and UART). Our format also incorporates <strong>system integrity mechanisms</strong>, ensuring valid message transmission without corruption. By structuring our communication logic around a <strong>fixed byte format</strong>, we allow for <strong>scalable, expandable control</strong>, ensuring <strong>seamless data processing across I2C, SPI, UART, and MQTT protocols</strong>. This approach guarantees that our system functions reliably, meeting <strong>user needs and project requirements</strong>, while allowing <strong>real-world implementation for sensor-actuator-controlled cooling systems</strong>.</p>
+<p>Our team invested significant effort into defining a robust, efficient, and extensible message format. Below is a step-by-step outline of how we arrived at our final design:</p>
+<ol>
+<li><strong>Choosing a Fixed-Length Frame</strong>  </li>
+<li><strong>Problem:</strong> Variable-length messages add parsing overhead and dynamic memory requirements on an 8-bit PIC.  </li>
+<li><strong>Decision:</strong> Use a 64-byte, fixed-length frame so each microcontroller can allocate a single static buffer.  </li>
+<li>
+<p><strong>Benefit:</strong> Simplifies CRC or header/footer checks, avoids heap fragmentation, and guarantees predictable timing.</p>
+</li>
+<li>
+<p><strong>Implementing Header &amp; Footer Markers</strong>  </p>
+</li>
+<li><strong>Problem:</strong> Byte-slip and line noise on the UART bus can desynchronize frame boundaries.  </li>
+<li><strong>Decision:</strong> Reserve bytes 0–1 for a unique 2-byte header (<code>0x41 0x5A</code>) and bytes 62–63 for a matching footer (<code>0x59 0x42</code>).  </li>
+<li>
+<p><strong>Benefit:</strong> Receivers scan for the header, read exactly 64 bytes, then confirm the footer—minimizing framing errors.</p>
+</li>
+<li>
+<p><strong>Defining Source &amp; Destination IDs</strong>  </p>
+</li>
+<li><strong>Problem:</strong> A daisy-chain bus requires a way to route messages hop-by-hop to the correct board.  </li>
+<li><strong>Decision:</strong> Use byte 2 for Source ID and byte 3 for Destination ID, assigned as ASCII codes (<code>‘E’=0x45</code>, <code>‘K’=0x4B</code>, <code>‘S’=0x53</code>, <code>‘T’=0x54</code>).  </li>
+<li>
+<p><strong>Benefit:</strong> Any board can inspect these bytes and either process the frame (if addressed) or forward it downstream.</p>
+</li>
+<li>
+<p><strong>Compact, Scaled Integer Payloads</strong>  </p>
+</li>
+<li><strong>Problem:</strong> Floating-point values are slow to convert and inflate message size; we need multiple sensor readings in one frame.  </li>
+<li><strong>Decision:</strong> Encode temperature, humidity, and flow rate as <code>uint16_t</code> scaled by 100 (e.g., 25.5 °C → 2550).  </li>
+<li>
+<p><strong>Benefit:</strong> Packs three readings into 6 bytes, reduces bus traffic, and keeps arithmetic simple on the PIC.</p>
+</li>
+<li>
+<p><strong>Message Type Field &amp; Enumerations</strong>  </p>
+</li>
+<li><strong>Problem:</strong> We needed a way to distinguish between control commands, sensor data, display updates, cloud uploads, and error reports.  </li>
+<li><strong>Decision:</strong> Reserve the first two bytes of the payload (bytes 4–5 of the frame) for a 16-bit Message Type code (<code>0x0001</code> through <code>0x0006</code>).  </li>
+<li>
+<p><strong>Benefit:</strong> New message types can be added by extending the enumeration; receivers switch on this field to parse the remaining payload appropriately.</p>
+</li>
+<li>
+<p><strong>Error-Handling Messages</strong>  </p>
+</li>
+<li><strong>Problem:</strong> Silent failures—like a disconnected sensor or framing error—are difficult to diagnose in a demo or exhibit.  </li>
+<li><strong>Decision:</strong> Define Message Type 6 as an “Error Message,” including one byte for Subsystem ID and up to 55 bytes of ASCII text describing the fault.  </li>
+<li>
+<p><strong>Benefit:</strong> Boards can log or display human-readable error strings, and the HMI can both alert users locally and publish alerts remotely via MQTT.</p>
+</li>
+<li>
+<p><strong>Balancing Polling vs. Event-Driven Control</strong>  </p>
+</li>
+<li><strong>Problem:</strong> Continuous polling can flood the bus; purely event-driven updates risk stale displays.  </li>
+<li><strong>Decision:</strong>  <ul>
+<li>Schedule periodic “Sensor Data Response” (Type 3) at 1 Hz.  </li>
+<li>Allow “Set Water Flow” (Type 1) and “Error Message” (Type 6) to be sent immediately on threshold triggers or fault detection.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Benefit:</strong> Ensures live monitoring without bus congestion, while critical commands break through immediately when needed.</p>
+</li>
+<li>
+<p><strong>Future Scalability Considerations</strong>  </p>
+</li>
+<li><strong>Problem:</strong> We anticipate adding more sensors or actuators in later iterations.  </li>
+<li><strong>Decision:</strong>  <ul>
+<li>Reserve unused Message Type codes (0x0007–0x00FF) for future features.  </li>
+<li>Keep the header/footer paradigm intact so no existing code needs to change when new types arrive.  </li>
+</ul>
+</li>
+<li><strong>Benefit:</strong> New subsystems can adopt the same framing and ID scheme, plug into the daisy-chain, and begin communicating with minimal firmware changes.</li>
+</ol>
+<hr>
+<p>Through strategic choices around frame length, header/footer synchronization, ID-based routing, and carefully enumerated message types, our team crafted a message structure that is:</p>
+<ul>
+<li><strong>Deterministic</strong>: Predictable timing and bounded bus utilization  </li>
+<li><strong>Robust</strong>: Built-in framing checks and explicit error reporting  </li>
+<li><strong>Extensible</strong>: Easily accommodates additional message types and subsystems  </li>
+<li><strong>Efficient</strong>: Low overhead, integer-only arithmetic, and compact payloads  </li>
+</ul>
+<p>This design underpins reliable communication across all four PCBs, meeting both our educational exhibit goals and real-world product requirements.  </p>
+<h2 id="team-member-roles">Team Member Roles</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Team Member</strong></th>
+<th><strong>Role</strong></th>
+<th><strong>Character ID</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Siddhant</td>
+<td>Motor Subsystem</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Ethan</td>
+<td>Sensor Subsystem</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Kevin</td>
+<td>HMI Subsystem</td>
+<td>K</td>
+</tr>
+<tr>
+<td>Sanjit</td>
+<td>Web Subsystem</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-table-message-type-overview">Message Table (Message Type Overview)</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Message Type</strong></th>
+<th><strong>Message ID Type: uint8_t</strong></th>
+<th><strong>Ethan Role: Sensor ID: E</strong></th>
+<th><strong>Siddhant Role: Motor ID: S</strong></th>
+<th><strong>Kevin Role: HMI ID: K</strong></th>
+<th><strong>Sanjit Role: WebID: T</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sensor value</td>
+<td>0x40</td>
+<td>Send: Turn motor on or off.</td>
+<td>Receive: Motor turns off or on due to temperature reading.</td>
+<td>Receive: (displayed on HMI)</td>
+<td>Receive: (mqtt topic: /EGR314/TEAMXYZ/SENSOR1)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="detailed-message-flow-table">Detailed Message Flow Table</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Message Purpose</strong></th>
+<th><strong>Message ID (8 bytes)</strong></th>
+<th><strong>Sender</strong></th>
+<th><strong>Receivers</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Send Temperature Data</td>
+<td><code>FSTE01FS</code></td>
+<td>Sanjit (T)</td>
+<td>Ethan (E)</td>
+<td>Sanjit sends temperature sensor data to Ethan.</td>
+</tr>
+<tr>
+<td>Forward Temp to HMI + Web</td>
+<td><code>FSET43FS</code>, <code>FSEK43FS</code></td>
+<td>Ethan (E)</td>
+<td>Sanjit (T), Kevin (K)</td>
+<td>Ethan sends processed temperature (43) to Kevin (HMI) and Sanjit (Web).</td>
+</tr>
+<tr>
+<td>Motor Off Command</td>
+<td><code>FSTS01FS</code></td>
+<td>Sanjit (T)</td>
+<td>Ethan (E)</td>
+<td>Sanjit requests motor OFF; Ethan checks if it applies to him and acts if so.</td>
+</tr>
+<tr>
+<td>Motor OFF Status → Kevin &amp; T</td>
+<td><code>FSST01FS</code>, <code>FSSK01FS</code></td>
+<td>Ethan (E)</td>
+<td>Sanjit (T), Kevin (K)</td>
+<td>Ethan informs Kevin and Sanjit of updated motor status (motor OFF).</td>
+</tr>
+<tr>
+<td>Motor ON Command (example)</td>
+<td><code>FSTS02FS</code></td>
+<td>Sanjit (T)</td>
+<td>Ethan (E)</td>
+<td>Similar process for turning motor ON; <code>02</code> could represent ON.</td>
+</tr>
+<tr>
+<td>Motor ON Status → Kevin &amp; T</td>
+<td><code>FSST02FS</code>, <code>FSSK02FS</code></td>
+<td>Ethan (E)</td>
+<td>Sanjit (T), Kevin (K)</td>
+<td>Status update to others showing motor is ON.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="siddhant-messages">Siddhant Messages</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Action</strong></th>
+<th><strong>Message ID</strong></th>
+<th><strong>Recipient</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motor OFF</td>
+<td><code>FSST01FS</code></td>
+<td>Sanjit</td>
+<td>Motor off status update</td>
+</tr>
+<tr>
+<td></td>
+<td><code>FSSK01FS</code></td>
+<td>Kevin</td>
+<td>Motor off status update</td>
+</tr>
+<tr>
+<td>Motor Reverse Status</td>
+<td><code>FSST02FS</code></td>
+<td>Sanjit</td>
+<td>Motor is reversing</td>
+</tr>
+<tr>
+<td></td>
+<td><code>FSSK02FS</code></td>
+<td>Kevin</td>
+<td>Motor is reversing</td>
+</tr>
+<tr>
+<td>Motor Forward Status</td>
+<td><code>FSST03FS</code></td>
+<td>Sanjit</td>
+<td>Motor is running forward</td>
+</tr>
+<tr>
+<td></td>
+<td><code>FSSK02FS</code></td>
+<td>Kevin</td>
+<td>Motor is running forward</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="ethan-messages">Ethan Messages</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Message ID</strong></th>
+<th><strong>Sender</strong></th>
+<th><strong>Recipient</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FSEK00FS</code></td>
+<td>Ethan</td>
+<td>Kevin</td>
+<td>Temperature message (<code>00</code> = temperature)</td>
+</tr>
+<tr>
+<td><code>FSET00FS</code></td>
+<td>Ethan</td>
+<td>Sanjit</td>
+<td>Temperature message (<code>00</code> = temperature)</td>
+</tr>
+<tr>
+<td><code>FSES00FS</code></td>
+<td>Ethan</td>
+<td>Siddhant</td>
+<td>Temperature message (<code>00</code> = temperature)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sanjit-messages-to-ethan">Sanjit Messages to Ethan</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Message ID</strong></th>
+<th><strong>Sender</strong></th>
+<th><strong>Recipient</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FSSE03FS</code></td>
+<td>Sanjit</td>
+<td>Ethan</td>
+<td>Command to turn on</td>
+</tr>
+</tbody>
+</table>
+<h2 id="kevin-messages">Kevin Messages</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Message ID</strong></th>
+<th><strong>Sender</strong></th>
+<th><strong>Recipient</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FSEK00FS</code></td>
+<td>Ethan</td>
+<td>Kevin</td>
+<td>Temperature to be sent</td>
+</tr>
+<tr>
+<td><code>FSSK01FS</code></td>
+<td>Siddhant</td>
+<td>Kevin</td>
+<td>Motor off</td>
+</tr>
+<tr>
+<td><code>FSEK02FS</code></td>
+<td>Siddhant</td>
+<td>Kevin</td>
+<td>Forward Motor</td>
+</tr>
+<tr>
+<td><code>FSEK03FS</code></td>
+<td>Siddhant</td>
+<td>Kevin</td>
+<td>Reverse Motor</td>
+</tr>
+</tbody>
+</table>
+<h1 id="general-message-structure">General Message Structure</h1>
+<table>
+<thead>
+<tr>
+<th><strong>Byte Range</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 - 1</td>
+<td><strong>Header</strong> (0x41 0x5A)</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Source ID</strong> (uint8_t)</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Destination ID</strong> (uint8_t)</td>
+</tr>
+<tr>
+<td>4 - 61</td>
+<td><strong>Message Data</strong> (Variable Length &lt; 58 Bytes)</td>
+</tr>
+<tr>
+<td>62 - 63</td>
+<td><strong>Footer</strong> (0x59 0x42)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="message-types">Message Types</h1>
+<h2 id="1-set-system-speed">1. Set System Speed</h2>
+<p>Used when the In-person or Web-Person sets a command speed.<br>
+Sent from ESP32 and PIC18F47Q10.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (1 = Set Speed)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>Speed Value (e.g., 200m/s)</td>
+<td>uint16_t</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-request-sensor-data">2. Request Sensor Data</h2>
+<p>Used when ESP32 requests sensor data from PIC18F47Q10.<br>
+PIC18F responds with temperature, humidity, and water flow rate.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (2 = Request Sensor Data)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sensor ID (1 = DHT11, 2 = SEN0229)</td>
+<td>uint8_t</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="3-sensor-data-response">3. Sensor Data Response</h2>
+<p>Used when PIC18F sends sensor data back to ESP32.<br>
+Contains multiple sensor readings in a single message.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (3 = Sensor Data Response)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>Temperature (°C × 100, e.g., 25.5°C = 2550)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>5-6</td>
+<td>Humidity (% × 100, e.g., 50.1% = 5010)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>7-8</td>
+<td>Water Flow Rate (L/min × 100, e.g., 10.5 L/min = 1050)</td>
+<td>uint16_t</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4-lcd-update-command">4. LCD Update Command</h2>
+<p>Sent from ESP32 to LCD (via SPI).</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (4 = LCD Update Command)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3-58</td>
+<td>Text String (e.g., “Speed: 200 m/s, Temperature: 30°C, Water flow Rate = 50 L/min”)</td>
+<td>char[55]</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5-cloud-update">5. Cloud Update</h2>
+<p>Sent from ESP32 to cloud via Wi-Fi.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (5 = Cloud Update)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3-58</td>
+<td>JSON String (Sensor Data)</td>
+<td>char[55]</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6-error-message">6. Error Message</h2>
+<p>Network Failure, Signal Loss.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Byte</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Data Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Message Type (6 = Error Message)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Subsystem ID (1 = PIC18, 2 = ESP32, 3 = Temperature Sensor, 4 = Water Turbine, 5 = LCD)</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td>4-58</td>
+<td>Error String</td>
+<td>char[55]</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="example-message-format">Example Message Format</h1>
+<p>For a message requesting sensor data from PIC18F47Q10:</p>
+<p><strong>Header</strong>: 0x41 0x5A<br>
+<strong>Source ID</strong>: 0x01 (ESP32)<br>
+<strong>Destination ID</strong>: 0x02 (PIC18F47Q10)<br>
+<strong>Message Data</strong>:<br>
+- Message Type: 0x02 (Request Sensor Data)<br>
+- Sensor ID: 0x01 (DHT11)<br>
+<strong>Footer</strong>: 0x59 0x42</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../Block%20Diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Block Diagram">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Block Diagram
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../The%20Process%20Diagram/" class="md-footer__link md-footer__link--next" aria-label="Next: The Process Diagram">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                The Process Diagram
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.footer", "content.action.edit", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

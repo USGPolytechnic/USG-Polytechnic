@@ -1,0 +1,1177 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+
+<meta name="robots" content="nofollow">
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://embedded-systems-design.github.io/template_report/Datasheets/">
+      
+      
+        <link rel="prev" href="../Appendix/">
+      
+      
+        <link rel="next" href="../Ideation%20and%20Concept%20Generation/">
+      
+      
+      <link rel="icon" href="../static/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+            
+
+        
+
+    
+      
+        <title>Datasheets for Components - EGR314 Team 308</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#datasheets-for-components" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="EGR314 Team 308" class="md-header__button md-logo" aria-label="EGR314 Team 308" data-md-component="logo">
+      
+  <img src="../static/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EGR314 Team 308
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Datasheets for Components
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/embedded-systems-design/template_report" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="EGR314 Team 308" class="md-nav__button md-logo" aria-label="EGR314 Team 308" data-md-component="logo">
+      
+  <img src="../static/logo.svg" alt="logo">
+
+    </a>
+    EGR314 Team 308
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/embedded-systems-design/template_report" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏆 Welcome to Team Fresh Start - Team 308
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Appendix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Team Member Communication Modes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Datasheets for Components
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Datasheets for Components
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#microcontroller-and-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔌 Microcontroller and Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔌 Microcontroller and Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Power Supply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humidity-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌡️ Humidity Sensor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other key components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other key components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#display-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖥️ Display Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wi-fi-and-bluetooth-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      📶 Wi-Fi and Bluetooth Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Microcontroller
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water-turbine-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      💧 Water Turbine Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humidity-and-temperature-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Humidity and Temperature Sensor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lcd-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 LCD Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microcontroller-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Microcontroller Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-turbine-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Water Turbine Components
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ideation%20and%20Concept%20Generation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ideation and Concept Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Poster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reflection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Block Diagram, Process Diagram, and Message Structure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Block Diagram, Process Diagram, and Message Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Block%20Diagram%2C%20Process%20Diagram%2C%20and%20Message%20Structure/Block%20Diagram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Block Diagram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Block%20Diagram%2C%20Process%20Diagram%2C%20and%20Message%20Structure/Message%20Structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Message Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Block%20Diagram%2C%20Process%20Diagram%2C%20and%20Message%20Structure/The%20Process%20Diagram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Process Diagram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../Block%20Diagram%2C%20Process%20Diagram%2C%20and%20Message%20Structure/Individual%20Block%20Diagrams/%28HMI%29%20LCD%20Block%20Diagram%20%28Kevin%29/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Individual Block Diagrams
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Static
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Static
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../static/node_modules/mathjax/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Node modules
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#microcontroller-and-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔌 Microcontroller and Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔌 Microcontroller and Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Power Supply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humidity-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌡️ Humidity Sensor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other key components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other key components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#display-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖥️ Display Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wi-fi-and-bluetooth-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      📶 Wi-Fi and Bluetooth Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Microcontroller
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water-turbine-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      💧 Water Turbine Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humidity-and-temperature-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Humidity and Temperature Sensor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lcd-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 LCD Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microcontroller-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Microcontroller Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-turbine-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Water Turbine Components
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/embedded-systems-design/template_report/edit/main/docs/Datasheets.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="datasheets-for-components"><strong>Datasheets for Components</strong></h1>
+<h2 id="microcontroller-and-modules">🔌 <strong>Microcontroller and Modules</strong></h2>
+<h3 id="power-supply">⚡ <strong>Power Supply</strong></h3>
+<ul>
+<li><strong>WSU050 - 5VDC Power Supply</strong><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/dc10a508-ec1d-462f-a71c-8584cde97fef" data-desc-position="bottom"><img alt="Overall Specs WSU" src="https://github.com/user-attachments/assets/dc10a508-ec1d-462f-a71c-8584cde97fef"></a></li>
+<li>Model 0930 9V AC/DC adapter</li>
+<li><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/3e446c83-6b12-47c2-bc71-58fee61850e3" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/3e446c83-6b12-47c2-bc71-58fee61850e3"></a></li>
+</ul>
+<h3 id="humidity-sensor">🌡️ <strong>Humidity Sensor</strong></h3>
+<p><strong>HDC2080DMBR</strong>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/61162e98-2ed2-41f2-a8a0-9130b71bec2d" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/61162e98-2ed2-41f2-a8a0-9130b71bec2d"></a></p>
+<p><a href="https://www.ti.com/lit/ds/symlink/hdc2080.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&amp;ts=1741194715896&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fhdc2080"><strong>PDF Datasheet</strong></a></p>
+<h2 id="other-key-components"><strong>Other key components</strong></h2>
+<ol>
+<li><a href="https://datasheet.ciiva.com/pdfs/VipMasterIC/IC/MIDC/MIDC-S-A0001192814/MIDC-S-A0001192814-1.pdf?src-supplier=IHS+Markit"><strong>694108301002 Through hole plug in power source</strong></a></li>
+<li><a href="https://datasheet.ciiva.com/pdfs/VipMasterIC/IC/TDKC/TDKC-S-A0008953915/TDKC-S-A0008953915-1.pdf?src-supplier=IHS+Markit"><strong>C1206C104K5RACTU - 100nF Cap 3mm</strong></a></li>
+<li><a href="https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM31CR61A106KA01-01.pdf"><strong>GRM31CR61A106KA01L - 3mm Cap</strong></a></li>
+<li><a href="https://octopart.com/datasheet/grm21br60j226me39l-murata-196432"><strong>GRM21BR61C106KE15L - SM 22 uF Cap 3mm</strong></a></li>
+<li><a href="https://www.alldatasheet.com/datasheet-pdf/pdf/528105/AD/M20-9990246.html"><strong>M20-9990246 header pins</strong></a></li>
+<li><a href="https://www.littelfuse.com/assetdocs/littelfuse-fuse-154-series-data-sheet?assetguid=a8a8a462-7295-481b-a91b-d770dabf005b"><strong>FUSE-2A/32V-3 - 2A fuse</strong></a></li>
+<li><a href="https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"><strong>RC1206FR-0710KL - 3mm wide resistor</strong></a></li>
+<li><a href="https://www.mouser.com/datasheet/2/87/eaton_corporation_bus_elx_ds_2017_gma_series-1160518.pdf"><strong>0154002.DR - 200mA fuse</strong></a></li>
+<li><a href="https://octopart.com/datasheet/28630806rp2-norcomp-248002"><strong>1x8 28630806RP2</strong></a></li>
+<li><a href="https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/PIC18F27-47Q10-Micorcontroller-Data-Sheet-DS40002043.pdf"><strong>PIC18F47Q10-I/P</strong></a></li>
+<li><a href="https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf"><strong>LDO - AP63203WU-7 (SM)</strong></a></li>
+<li><a href="https://www.keyelco.com/userAssets/file/M65p56.pdf"><strong>5004 - Test Point</strong></a></li>
+<li><a href="https://www.onsemi.com/pdf/datasheet/bat54ht1-d.pdf"><strong>BAT54HT1G - Diode</strong></a></li>
+<li><a href="https://s3-us-west-2.amazonaws.com/catsy.557/C18571.pdf"><strong>597-6602-107F (Blue LED) (SM)</strong></a></li>
+<li><a href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/610/NR6028T4R7M_SS.pdf"><strong>NR6028T4R7M - Inductor</strong></a></li>
+<li><a href="https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3u.pdf"><strong>B3U-1000P - Switch</strong></a></li>
+<li><a href="https://www.we-online.com/components/products/datasheet/6130xx11821.pdf"><strong>61301011821</strong></a></li>
+<li><a href="https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf"><strong>Diode</strong></a></li>
+</ol>
+<h3 id="display-modules">🖥️ <strong>Display Modules</strong></h3>
+<ul>
+<li>
+<p><strong>ERM1602-6 - 16x2 Display</strong><br>
+<a href="https://github.com/user-attachments/files/18630571/ERM1602-6_Series_Datasheet.pdf"><strong>PDF Datasheet</strong></a><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/eabb65a6-703c-40cc-bb7a-979b12244ff6" data-desc-position="bottom"><img alt="Electrical Overview" src="https://github.com/user-attachments/assets/eabb65a6-703c-40cc-bb7a-979b12244ff6"></a></p>
+</li>
+<li>
+<p><strong>LCD1602 - 16x2 LCD Display</strong><br>
+<a href="https://github.com/user-attachments/files/18630576/LCD1602.pdf"><strong>PDF Datasheet</strong></a><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/8bfb4eda-ae0c-4384-92bf-e412e4078cba" data-desc-position="bottom"><img alt="Electrical Characteristics" src="https://github.com/user-attachments/assets/8bfb4eda-ae0c-4384-92bf-e412e4078cba"></a></p>
+</li>
+<li>
+<p><strong>ILI9341 - 2.8" Color TFT LCD</strong><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../LCD.png" data-desc-position="bottom"><img alt="ILI9341 LCD" src="../LCD.png"></a><br>
+<a href="https://drive.google.com/file/d/13Vzs_nryKCrYzu6Ut4T06sFtYOACqKBY/view?usp=drive_link"><strong>PDF Datasheet</strong></a></p>
+</li>
+</ul>
+<h3 id="wi-fi-and-bluetooth-module">📶 <strong>Wi-Fi and Bluetooth Module</strong></h3>
+<ul>
+<li><strong>ESP32 - Wi-Fi &amp; Bluetooth Module</strong><br>
+<a href="https://github.com/user-attachments/files/18630572/esp32-wroom-32_datasheet_en.pdf"><strong>PDF Datasheet</strong></a><br>
+<strong>Pin Layouts</strong>: Start at page 9 for detailed pin information.<br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/268f1eca-8b5f-4e95-8691-5cc215755d1f" data-desc-position="bottom"><img alt="Recommended Operating Conditions" src="https://github.com/user-attachments/assets/268f1eca-8b5f-4e95-8691-5cc215755d1f"></a></li>
+</ul>
+<h3 id="microcontroller">💻 <strong>Microcontroller</strong></h3>
+<ul>
+<li><strong>PIC18F27Q10 - Microcontroller</strong><br>
+<a href="https://github.com/user-attachments/files/18630579/PIC18F27-47Q10-Micorcontroller-Data-Sheet-DS40002043.pdf"><strong>PDF Datasheet</strong></a><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/863233ec-4e85-42bb-b062-0bb46e0e7dd3" data-desc-position="bottom"><img alt="Overview" src="https://github.com/user-attachments/assets/863233ec-4e85-42bb-b062-0bb46e0e7dd3"></a></li>
+</ul>
+<h3 id="water-turbine-generator">💧 <strong>Water Turbine Generator</strong></h3>
+<ul>
+<li><strong>SEN0229 - Water Turbine Generator</strong><br>
+<a href="https://github.com/user-attachments/files/18630581/SEN0229_Web.pdf"><strong>PDF Datasheet</strong></a><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/3c0c55e7-2fe0-4196-90d2-f14bdf774e51" data-desc-position="bottom"><img alt="Image 1" src="https://github.com/user-attachments/assets/3c0c55e7-2fe0-4196-90d2-f14bdf774e51"></a><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/a5fec78f-e4f0-40a6-afc2-2a082cf8aa5c" data-desc-position="bottom"><img alt="Image 2" src="https://github.com/user-attachments/assets/a5fec78f-e4f0-40a6-afc2-2a082cf8aa5c"></a></li>
+</ul>
+<hr>
+<h2 id="humidity-and-temperature-sensor">📊 <strong>Humidity and Temperature Sensor</strong></h2>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1XDYP-75lMF53_pUxz10kB5wWfIxgC6Pn/edit?gid=1046845005#gid=1046845005"><strong>BOM for 📊 Humidity and Temperature Sensor</strong></a></li>
+</ul>
+<hr>
+<h2 id="lcd-components">📊 <strong>LCD Components</strong></h2>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1thl4na_Zp6JJeODk620oabDfIGcsMig7/edit?gid=2097922702#gid=2097922702"><strong>BOM for Digikey</strong></a></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1-0N1lIkbUpXZKQGJ7zUacZkNk9KAOLeZ/edit?gid=989998681#gid=989998681"><strong>BOM for Amazon</strong></a></li>
+</ul>
+<hr>
+<h2 id="microcontroller-components">📊 <strong>Microcontroller Components</strong></h2>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1TLPQAe9Ysa-mRq6CsnGLN0VT0UPX8lDi/edit?gid=1284711265#gid=1284711265"><strong>BOM for Microcontroller</strong></a></li>
+</ul>
+<hr>
+<h2 id="water-turbine-components">📊 <strong>Water Turbine Components</strong></h2>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/15jXAXBXpmTbjrGjso7ABhld2auJOA4Gt0rnLwpOWp34/edit?gid=0#gid=0"><strong>BOM for Water Turbine</strong></a></li>
+</ul>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../Appendix/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Team Member Communication Modes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Team Member Communication Modes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Ideation%20and%20Concept%20Generation/" class="md-footer__link md-footer__link--next" aria-label="Next: Ideation and Concept Generation">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Ideation and Concept Generation
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.footer", "content.action.edit", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
