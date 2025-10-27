@@ -2,12 +2,13 @@ site_name: Undergraduate Student Government Polytechnic
 #site_url: https://usgpolytechnic.github.io/USG-Polytechnic/
 #repo_url: https://github.com/USGPolytechnic/USG-Polytechnic
 #edit_uri: edit/main/docs/
+
 theme:
   name: material
   custom_dir: custom_theme/
   palette:
-    primary: red   # ASU Maroon
-    accent: amber   # ASU Gold
+    primary: red     # fallback close to ASU Maroon
+    accent: amber    # fallback close to ASU Gold
   font:
     text: "Lato"
     code: "Fira Code"
@@ -15,21 +16,20 @@ theme:
   favicon: logo.png
 
 extra:
-  generator: false   # hides "Made with Material for MkDocs"
-hide:
-  - toc
-  
+  generator: false
+  hide:
+    - toc   # removes right-hand Table of Contents
   features:
-    - navigation.sections  # Enables collapsible sidebar navigation
-    - navigation.tabs.sticky  # Keeps tabs fixed at the top
-    - navigation.path  # Shows breadcrumb navigation
-    - navigation.indexes  # Uses index.md as section overview
-    - navigation.prune  # Hides empty sections
-    #- toc.follow  # Table of contents follows scrolling
-    - navigation.footer  # Adds navigation buttons at the bottom
-    - content.action.edit  # Allows quick edit access
-    - search.highlight  # Highlights search terms in results
-    - content.code.copy  # Adds copy button to code blocks
+    - navigation.sections
+    - navigation.tabs.sticky
+    - navigation.path
+    - navigation.indexes
+    - navigation.prune
+    #- toc.follow
+    - navigation.footer
+    - content.action.edit
+    - search.highlight
+    - content.code.copy
 
 markdown_extensions:
   - attr_list
@@ -51,14 +51,12 @@ draft_docs: |
 
 plugins:
   - search
-  - glightbox  # Allow image resizing and zooming
+  - glightbox
 
 extra_css:
-  - stylesheets/extra.css  
-    - stylesheets/asu.css
+  - stylesheets/extra.css
+  - stylesheets/asu.css
 
 extra_javascript:
- - javascripts/mathjax.js
- - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
