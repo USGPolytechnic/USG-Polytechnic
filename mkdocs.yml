@@ -6,8 +6,8 @@ theme:
   name: material
   custom_dir: custom_theme/
   palette:
-    primary: "#8C1D40"   # ASU Maroon
-    accent: "#FFC627"   # ASU Gold
+    primary: red   # ASU Maroon
+    accent: amber   # ASU Gold
   font:
     text: "Lato"
     code: "Fira Code"
