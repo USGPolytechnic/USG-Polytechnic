@@ -8,12 +8,12 @@ theme:
   custom_dir: custom_theme/
   palette:
     primary: Red
-    accent: Gold
+    accent: Orange
   font:
-    text: "Work Sans"
+    text: "Lato"
     code: "Fira Code"
   logo: static/logo.png
-  favicon: static/logo.png
+ ## favicon: static/logo.png
   
 extra:
   generator: false   # hides "Made with Material for MkDocs"
