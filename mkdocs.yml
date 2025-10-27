@@ -13,7 +13,8 @@ theme:
     code: "Fira Code"
   logo: logo.png
   favicon: logo.png
-
+extra_css:
+  - stylesheets/asu.css
 extra:
   generator: false   # hides "Made with Material for MkDocs"
   
