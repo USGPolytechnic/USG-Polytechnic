@@ -1,14 +1,14 @@
-site_name: EGR314 Team 308
-site_url: https://embedded-systems-design.github.io/template_report
-repo_url: https://github.com/embedded-systems-design/template_report
+site_name: Undergraduate Student Government Polytechnic
+site_url: https://usgpolytechnic.github.io/USG-Polytechnic/
+repo_url: https://github.com/USGPolytechnic/USG-Polytechnic
 edit_uri: edit/main/docs/
 
 theme:
   name: material
   custom_dir: custom_theme/
   palette:
-    primary: red
-    accent: white
+    primary: Maroon
+    accent: Gold
   font:
     text: "Lato"
     code: "Fira Code"
