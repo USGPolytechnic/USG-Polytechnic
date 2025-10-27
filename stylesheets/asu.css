@@ -4,4 +4,8 @@
   --md-primary-fg-color--dark:  #6E1632;
 
   --md-accent-fg-color:         #FFC627;
+  /* Hide the right-hand Table of Contents completely */
+.md-sidebar--secondary {
+  display: none !important;
 }
+
