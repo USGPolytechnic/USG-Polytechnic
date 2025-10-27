@@ -5,7 +5,13 @@
 
   --md-accent-fg-color:         #FFC627;
   /* Hide the right-hand Table of Contents completely */
-.md-sidebar--secondary {
+/* Force-hide the right-hand Table of Contents */
+.md-sidebar--secondary,
+.md-sidebar--secondary .md-sidebar__scrollwrap {
   display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  max-width: 0 !important;
+  overflow: hidden !important;
 }
 
