@@ -12,9 +12,12 @@ theme:
   font:
     text: "Work Sans"
     code: "Fira Code"
-  logo: static/logo.png
-  favicon: static/logo.png
-
+  logo: docs/stylesheets/logo.png
+  favicon: docs/stylesheets/logo.png
+  
+extra:
+  generator: false   # hides "Made with Material for MkDocs"
+  
   features:
     - navigation.sections  # Enables collapsible sidebar navigation
     - navigation.tabs.sticky  # Keeps tabs fixed at the top
