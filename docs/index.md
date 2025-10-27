@@ -3,7 +3,7 @@
 ---
 
 ## 🏛 **Team Details**
-- **🔢 Team Number:** 308  
+- **🔢 Team Number:**   
 - **📅 Preparation Date:** January 16, 2025  
 - **📆 Semester & Year:** Spring 2025  
 - **🏫 Institution:** Arizona State University  
