@@ -11,8 +11,8 @@ theme:
   font:
     text: "Lato"
     code: "Fira Code"
-  logo: docs/logo.png
-  favicon: docs/logo.png
+  logo: logo.png
+  favicon: logo.png
 
 extra:
   generator: false   # hides "Made with Material for MkDocs"
