@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write   # 👈 allow pushing to gh-pages
+
 jobs:
   build:
     name: Build and Deploy MkDocs
@@ -16,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'   # matches what you use locally
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
